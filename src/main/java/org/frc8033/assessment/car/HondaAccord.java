@@ -8,7 +8,11 @@ public class HondaAccord extends GasCar {
     }
     public HondaAccord(float tankSize, float mileage){
         super(tankSize,mileage);
-        this.stock = false;
+        if (tankSize != 15 && mileage != 32) {
+            this.stock = false;
+        } else {
+            this.stock = true;
+        }
     }
     public boolean isStock() {
         return this.stock;
