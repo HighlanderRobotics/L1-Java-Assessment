@@ -4,13 +4,11 @@ public class GasCar implements Car {
     public float tankSize;
     public float gasMileage;
     public float gasAmount;
-    public float gasUsed;
     
         public GasCar(float tankSize, float gasMileage) {
             this.gasMileage = gasMileage;
             this.tankSize = tankSize;
             this.gasAmount = tankSize;
-            this.gasUsed = gasMileage;
         }
         public float getTankSize() {
             return tankSize;
@@ -32,8 +30,7 @@ public class GasCar implements Car {
 }
     @Override
     public float getRangeMi() {
-        float gasLeft = gasAmount -= gasUsed;
-        return gasLeft * gasMileage;
+        return gasAmount * gasMileage;
     }
     public void fillTank() {
         gasAmount = tankSize;
